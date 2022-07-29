@@ -28,7 +28,7 @@ CREATE TABLE "customerPhones"(
 
 CREATE TABLE "customerAdresses"(
 	id SERIAL NOT NULL PRIMARY KEY,
-	"customerId" INTEGER NOT NULL REFERENCES "customers"("id"),
+	"customerId" INTEGER NOT NULL UNIQUE REFERENCES "customers"("id"),
 	street TEXT NOT NULL,
 	number INTEGER NOT NULL,
 	complement TEXT DEFAULT NULL,
